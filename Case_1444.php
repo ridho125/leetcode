@@ -35,10 +35,9 @@
         return $dp[$k - 1][0][0];
         
     }
-}
 echo ways(["A..","AAA","..."],3);
-echo ways(["A..","AA.","..."],3);
-echo ways(["A..","A..","..."],1);
+// echo ways(["A..","AA.","..."],3);
+// echo ways(["A..","A..","..."],1);
 ?> 
 
 </body>
