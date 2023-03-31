@@ -4,12 +4,18 @@
 
 <?php
     function ways($pizza, $k) {
-        $rows = count($pizza); $cols = count($pizza[0]);
-        $apples[$rows + 1][$cols + 1];
-        $dp[$k][$rows][$cols];
+        $rows = count($pizza); $cols = count(str_split($pizza[0]));
+        $apples = array(); $dp = array();
+		// $apples[$rows + 1][$cols + 1];
+        // $dp[$k][$rows][$cols];
         for ($row = $rows - 1; $row >= 0; $row--) {
             for ($col = $cols - 1; $col >= 0; $col--) {
-                $apples[$row][$col] = ($pizza[$row][$col] == 'A' ? 1 : 0) + $apples[$row + 1][$col] + $apples[$row][$col + 1] - $apples[$row + 1][$col + 1];
+				print_r($row); print_r($col);
+                $apples[$row][$col] = 
+				($pizza[$row][$col] == 'A' ? 1 : 0) + 
+				$apples[$row + 1][$col] + 
+				$apples[$row][$col + 1] - 
+				$apples[$row + 1][$col + 1];
                 $dp[0][$row][$col] = $apples[$row][$col] > 0 ? 1 : 0;
             }
         }
